@@ -14,12 +14,6 @@ let
 in
 
 {
-    ################
-    #### PLASMA ####
-    ################
-
-    services.desktopManager.plasma6.enable = true;
-
     ###################
     #### KEYRING ####
     ###################
@@ -44,5 +38,4 @@ in
     environment.systemPackages = [
         sddm-astronaut
     ];
-
 }

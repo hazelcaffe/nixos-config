@@ -28,18 +28,19 @@
     outputs = inputs@{ self, nixpkgs, home-manager, ... }:
         let
             system = "x86_64-linux";
-            hostname = "pc";
+            host = "pc";
+            hostname = "eon";
             username = "hazel";
-        in
-        {
-            nixosConfigurations.${hostname} = nixpkgs.lib.nixosSystem {
+
+            mkSystem = name: desktopModule: homeModules: nixpkgs.lib.nixosSystem {
                 inherit system;
                 specialArgs = {
                     inherit inputs hostname username;
                 };
 
                 modules = [
-                    ./hosts/${hostname}
+                    ./hosts/${host}
+                    desktopModule
                     home-manager.nixosModules.home-manager
                     {
                         home-manager = {
@@ -48,10 +49,23 @@
                             extraSpecialArgs = {
                                 inherit inputs hostname username;
                             };
-                            users.${username} = import ./home/${username};
+                            users.${username} = {
+                                imports = [
+                                    ./home/${username}
+                                ] ++ homeModules;
+                            };
                         };
                     }
                 ];
             };
+
+            mkKdeSystem = name: mkSystem name ./modules/nixos/desktop/kde.nix [ ];
+            mkNiriSystem = name: mkSystem name ./modules/nixos/desktop/niri.nix [
+                ./home/${username}/niri.nix
+            ];
+        in
+        {
+            nixosConfigurations."${host}-kde" = mkKdeSystem "${host}-kde";
+            nixosConfigurations."${host}-niri" = mkNiriSystem "${host}-niri";
         };
 }

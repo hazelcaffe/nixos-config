@@ -1,0 +1,6 @@
+{
+    "defaultWallpaper": "/etc/nixos/external/noctalia/beach.jpg",
+    "wallpapers": {
+        "DP-1": "/etc/nixos/external/noctalia/beach.jpg"
+    }
+}
