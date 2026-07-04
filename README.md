@@ -5,9 +5,6 @@ sudo nixos-rebuild switch --flake /etc/nixos#pc
 ```
 
 ## Screenshots
-### KDE 6
-![KDE](./screenshots/kde6.png)
-### Niri
 ![Niri](./screenshots/niri.png)
 
 ## Layout

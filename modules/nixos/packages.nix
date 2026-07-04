@@ -23,7 +23,5 @@
             flavour = [ "latte" ];
             accents = [ "pink" ];
         })
-        kdePackages.ark
-        kdePackages.dolphin
     ];
 }

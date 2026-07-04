@@ -23,12 +23,6 @@ in
         package = pkgs.niri;
     };
 
-    ################
-    #### PLASMA ####
-    ################
-
-    services.desktopManager.plasma6.enable = true;
-
     ###################
     #### KEYRING ####
     ###################
