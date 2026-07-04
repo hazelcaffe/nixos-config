@@ -1,0 +1,54 @@
+{ lib, pkgs, ... }:
+
+let
+    sddm-astronaut = pkgs.sddm-astronaut.override {
+        embeddedTheme = "pixel_sakura";
+    };
+
+    sddm = pkgs.kdePackages.sddm.override (old: {
+        extraPackages = (old.extraPackages or [ ]) ++ [
+            sddm-astronaut
+            pkgs.kdePackages.qtmultimedia
+        ];
+    });
+in
+
+{
+    ##############
+    #### NIRI ####
+    ##############
+
+    programs.niri = {
+        enable = true;
+        package = pkgs.niri;
+    };
+
+    ################
+    #### PLASMA ####
+    ################
+
+    services.desktopManager.plasma6.enable = true;
+
+    #########################
+    #### DISPLAY MANAGER ####
+    #########################
+
+    services.displayManager.sddm = {
+        enable = true;
+        package = lib.mkForce sddm;
+        wayland.enable = true;
+        theme = "sddm-astronaut-theme";
+
+        settings.Theme.Current = "sddm-astronaut-theme";
+    };
+
+    services.displayManager.defaultSession = "plasma";
+
+    environment.systemPackages = [
+        pkgs.nautilus
+        pkgs.noctalia-shell
+        pkgs.quickshell
+        sddm-astronaut
+    ];
+
+}

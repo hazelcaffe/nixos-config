@@ -1,0 +1,18 @@
+{
+    "preset": "lesbian",
+    "mode": "rgb",
+    "auto_detect_light_dark": false,
+    "light_dark": "light",
+    "lightness": 0.4,
+    "color_align": {
+        "mode": "horizontal"
+    },
+    "backend": "fastfetch",
+    "args": null,
+    "distro": "nixos_small",
+    "pride_month_disable": false,
+    "custom_ascii_path": null,
+    "custom_presets": null,
+    "palette_glyph": null,
+    "palette_type": null
+}
