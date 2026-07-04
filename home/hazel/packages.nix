@@ -8,9 +8,14 @@
     home.packages = with pkgs; [
         bat
         delta
+        duf
+        dust
         eza
         fd
+        gh
+        rm-improved
         ripgrep
+        sd
         bun
         nodejs_26
         pnpm
