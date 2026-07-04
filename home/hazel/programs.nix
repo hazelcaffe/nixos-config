@@ -7,6 +7,17 @@
 
     xdg.configFile."ghostty/config".source = ../../external/ghostty;
 
+    #################
+    #### FETCHERS ####
+    #################
+
+    xdg.configFile."fastfetch/config.jsonc".source = ../../external/fastfetch.jsonc;
+
+    xdg.configFile."hyfetch.json" = {
+        source = ../../external/hyfetch.json;
+        force = true;
+    };
+
     #############
     #### GIT ####
     #############

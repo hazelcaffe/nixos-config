@@ -3,7 +3,6 @@
 {
     imports = [
         ./cava.nix
-        ./fastfetch.nix
         ./niri.nix
         ./packages.nix
         ./programs.nix

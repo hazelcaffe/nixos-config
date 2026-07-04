@@ -21,6 +21,7 @@
         inputs.hytale-launcher-nix.packages.${pkgs.stdenv.hostPlatform.system}.hytale-launcher
         cider-2
         google-chrome
+        fastfetch
         hyfetch
         lunar-client
         obsidian

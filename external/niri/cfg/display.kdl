@@ -4,6 +4,7 @@
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Outputs
 
 output "DP-1" {
-    mode "2560x1440@180.000"
+    mode "2560x1440@179.998"
     scale 1
+    variable-refresh-rate
 }

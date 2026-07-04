@@ -45,9 +45,6 @@ in
     services.displayManager.defaultSession = "plasma";
 
     environment.systemPackages = [
-        pkgs.nautilus
-        pkgs.noctalia-shell
-        pkgs.quickshell
         sddm-astronaut
     ];
 

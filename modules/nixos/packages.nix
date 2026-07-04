@@ -6,10 +6,8 @@
     #########################
 
     environment.systemPackages = with pkgs; [
-        fastfetch
         curl
         wget
-        sudo
         nano
         htop
         btop
