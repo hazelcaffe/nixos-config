@@ -3,7 +3,6 @@
 {
     imports = [
         ./cava.nix
-        ./niri.nix
         ./packages.nix
         ./programs.nix
         ./zsh.nix
