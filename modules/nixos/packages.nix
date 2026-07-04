@@ -19,9 +19,5 @@
         obs-studio
         qbittorrent
         wine
-        (catppuccin-kde.override {
-            flavour = [ "latte" ];
-            accents = [ "pink" ];
-        })
     ];
 }
