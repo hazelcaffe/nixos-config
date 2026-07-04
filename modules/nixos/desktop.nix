@@ -29,6 +29,12 @@ in
 
     services.desktopManager.plasma6.enable = true;
 
+    ###################
+    #### KEYRING ####
+    ###################
+
+    services.gnome.gnome-keyring.enable = true;
+
     #########################
     #### DISPLAY MANAGER ####
     #########################
@@ -42,7 +48,7 @@ in
         settings.Theme.Current = "sddm-astronaut-theme";
     };
 
-    services.displayManager.defaultSession = "plasma";
+    security.pam.services.sddm.enableGnomeKeyring = true;
 
     environment.systemPackages = [
         sddm-astronaut

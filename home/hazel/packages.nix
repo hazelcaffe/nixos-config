@@ -20,7 +20,15 @@
         inputs.nix-gaming.packages.${pkgs.stdenv.hostPlatform.system}.osu-lazer-bin
         inputs.hytale-launcher-nix.packages.${pkgs.stdenv.hostPlatform.system}.hytale-launcher
         cider-2
-        google-chrome
+        (symlinkJoin {
+            name = "google-chrome";
+            paths = [ google-chrome ];
+            buildInputs = [ makeWrapper ];
+            postBuild = ''
+                wrapProgram $out/bin/google-chrome --add-flags "--password-store=kwallet"
+                wrapProgram $out/bin/google-chrome-stable --add-flags "--password-store=kwallet"
+            '';
+        })
         fastfetch
         hyfetch
         lunar-client
