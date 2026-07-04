@@ -12,10 +12,14 @@
 
         shellAliases = {
             cat = "bat";
+            df = "duf";
             diff = "delta";
+            du = "dust";
             find = "fd";
             ls = "eza";
+            rm = "rip";
             rp = "rg";
+            tree = "eza --tree";
         };
 
         oh-my-zsh = {
