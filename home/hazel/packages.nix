@@ -37,11 +37,14 @@
         fastfetch
         hyfetch
         lunar-client
+        librepods
         obsidian
         prismlauncher
         steam
         vesktop
+        vlc
         vscode
+        zed-editor
         proton-vpn
     ];
 }

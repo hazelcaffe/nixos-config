@@ -8,6 +8,9 @@
     environment.systemPackages = with pkgs; [
         curl
         wget
+        zip
+        unzip
+        jq
         nano
         htop
         btop
